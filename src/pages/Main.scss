@@ -1,0 +1,156 @@
+@mixin border-gray {
+	border: 1px solid #dddddd;
+	border-radius: 37.5px;
+}
+@mixin flex-center-vertical {
+	display: flex;
+	align-items: center;
+}
+@mixin heading-s {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17px;
+}
+@mixin text-s {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 17px;
+	color: #999999;
+}
+
+.divider {
+	width: 100%;
+	height: 1px;
+	background-color: #dddddd;
+}
+
+.search-address {
+	position: relative;
+	width: 100%;
+	height: 278px;
+	margin: 20px 0;
+	padding: 30px 40px;
+	background: url(../assets/images/hero-main.png);
+	background-size: cover;
+	background-repeat: no;
+
+	&__title {
+		color: #fff;
+		max-width: 48%;
+		border-radius: 15px;
+		font-weight: 500;
+		font-size: 48px;
+		line-height: 59px;
+	}
+	&__bar {
+		display: flex;
+		align-items: center;
+		margin-top: 40px;
+		border-radius: 15px;
+		width: 65.85%;
+		height: 60px;
+		color: #999999;
+		background-color: #fff;
+
+		form {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		#name {
+			margin-left: 20px;
+			min-width: 71%;
+		}
+	}
+	&__submit {
+		color: white;
+		background: linear-gradient(95.32deg, #f78d6a 0%, #ff4a76 100%);
+		opacity: 0.5;
+		margin-right: 3px;
+		cursor: pointer;
+		border-radius: 12px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 20px;
+		width: 177px;
+		height: 54px;
+		display: flex;
+		justify-content: center;
+	}
+}
+.download {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	left: 84%;
+	top: 30%;
+	cursor: pointer;
+}
+.options {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+.flags {
+	display: flex;
+	gap: 10px;
+	&__item {
+		@include border-gray;
+		display: flex;
+		align-items: center;
+
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 17px;
+		padding: 11px 20px;
+		cursor: pointer;
+		&--pink {
+			background: #ff4a76;
+			color: #fff;
+		}
+	}
+}
+.filter {
+	@include border-gray;
+	@include flex-center-vertical;
+	justify-content: center;
+	font-weight: 500;
+	font-size: 14px;
+	min-width: 210px;
+	min-height: 40px;
+	line-height: 17px;
+	background: #eeeeee;
+}
+
+.search-menu {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+
+	&__bar {
+		@include border-gray;
+		@include flex-center-vertical;
+		min-width: 65.9%;
+		min-height: 60px;
+
+		img {
+			margin: 0px 20px;
+		}
+	}
+	&__delivery-time {
+		@include border-gray;
+		@include flex-center-vertical;
+		min-height: 60px;
+		min-width: 31.7%;
+
+		img {
+			margin: 0px 20px;
+		}
+	}
+}
+
+#search-menu__input {
+	min-width: 90%;
+}

@@ -1,0 +1,19 @@
+@import '../../pages/Main.scss';
+
+.side-cart {
+	&__list {
+		background: #f5f5f5;
+		border-radius: 15px;
+		padding: 20px;
+	}
+	&__heading {
+		display: flex;
+		justify-content: space-between;
+		@include heading-s;
+		margin-bottom: 30px;
+
+		img {
+			cursor: pointer;
+		}
+	}
+}

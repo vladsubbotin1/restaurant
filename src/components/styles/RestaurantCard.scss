@@ -1,0 +1,42 @@
+.restaurant-list {
+	margin-top: 40px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+
+	&__pics {
+		max-width: 37.7%;
+		filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.05));
+		background: #ffffff;
+		border-radius: 15px;
+		transition: 0.4s;
+		&:hover {
+			transform: translateY(-5px);
+		}
+		&:first-of-type {
+			filter: drop-shadow(0px 20px 40px rgba(0, 0, 0, 0.1));
+		}
+		img {
+			cursor: pointer;
+		}
+	}
+
+	&__text {
+		padding: 20px 0 20px 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	&__name {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 22px;
+	}
+	&__desc {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 18px;
+		color: #999999;
+		max-width: 256px;
+	}
+}
