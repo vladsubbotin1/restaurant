@@ -91,9 +91,9 @@ const restaurantCard = () => {
 
 	return (
 		<div className='restaurant-list'>
-			{data.map((item, index) => {
+			{data.map(item => {
 				return (
-					<div className='restaurant-list__pics' key={index}>
+					<div className='restaurant-list__pics'>
 						<Link to={item.name.toLowerCase()}>
 							<img src={item.imgSrc} alt='restaurant' />
 							<div className='restaurant-list__text'>

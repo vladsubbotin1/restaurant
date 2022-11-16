@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom'
 import Trash from '../assets/icons/trash.svg'
 import '../components/styles/SideCart.scss'
 
-const SideCart = () => {
+const SideCart = props => {
 	return (
 		<>
 			<div className='side-cart'>
@@ -11,6 +12,12 @@ const SideCart = () => {
 						<img src={Trash} alt='trash-icon' />
 					</div>
 				</div>
+
+				{props.submit != 'noSubmit' && (
+					<Link to='/cart'>
+						<button className='side-cart__button'>Оформить заказ</button>
+					</Link>
+				)}
 			</div>
 		</>
 	)

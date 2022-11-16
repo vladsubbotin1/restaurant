@@ -12,6 +12,10 @@ $content-width: 765px;
 	border-radius: 15px;
 }
 
+.restaurant__column-main {
+	flex-direction: column;
+}
+
 .restaurant-header {
 	&__root {
 		position: relative;

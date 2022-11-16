@@ -5,6 +5,7 @@ import Info from '../../assets/icons/info.svg'
 import RestaurantInformer from '../../components/RestaurantInformer'
 import SideCart from '../../components/SideCart'
 import Menu from '../../components/Menu'
+import FooterBig from '../../components/FooterBig'
 
 const Seoul = () => {
 	const saleItems = [
@@ -39,6 +40,24 @@ const Seoul = () => {
 			desc: 'Описание блюда',
 			oldPrice: '200₽',
 			imgUrl: 'pancake.jpg',
+		},
+	]
+	const lunchItems = [
+		{
+			heading: 'Гранола с йогуртом',
+			weight: '300гр',
+			price: '144₽',
+			desc: 'Гранола с орехами, классическим йогуртом и фруктами на выбор',
+			oldPrice: '180₽',
+			imgUrl: 'soup.jpg',
+		},
+		{
+			heading: 'Название блюда',
+			weight: '150гр',
+			price: '100₽',
+			desc: 'Описание блюда',
+			oldPrice: '200₽',
+			imgUrl: 'salad.jpg',
 		},
 	]
 	const breakfastItems = [
@@ -99,7 +118,7 @@ const Seoul = () => {
 			<div className='divider'></div>
 			<div className='wrapper'>
 				<div className='column-container'>
-					<div className='column-main'>
+					<div className='column-main restaurant__column-main'>
 						<div className='restaurant-header__root'>
 							<div className='restaurant-header__text'>
 								<h1 className='restaurant-header__heading'>Seoul</h1>
@@ -129,7 +148,7 @@ const Seoul = () => {
 								<div className='flags__item'>Супы</div>
 							</div>
 							<RestaurantInformer
-								type='Gift'
+								type='Sale'
 								heading='Блюдо в подарок'
 								text='Суп-лапша с курицей в подарок при заказе от 750₽ без учёта доставки'
 							/>
@@ -140,6 +159,11 @@ const Seoul = () => {
 							/>
 
 							<Menu categoryName='Акции' itemAmount='4' items={saleItems} />
+							<Menu
+								categoryName='Бизнес-ланч'
+								itemAmount='2'
+								items={lunchItems}
+							/>
 							<Menu
 								categoryName='Завтрак'
 								itemAmount='6'
@@ -152,6 +176,7 @@ const Seoul = () => {
 					</aside>
 				</div>
 			</div>
+			<FooterBig />
 		</>
 	)
 }

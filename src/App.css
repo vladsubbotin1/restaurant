@@ -22,8 +22,8 @@ li {
 	list-style-type: none;
 }
 input,
-input:focus,
-input:focus-visible,
+ul,
+li,
 a,
 h1,
 h2,
@@ -37,4 +37,20 @@ h6 {
 	text-decoration: none;
 	border: none;
 	color: inherit;
+}
+
+input[type='radio' i] {
+	-webkit-appearance: none;
+	position: relative;
+	appearance: none;
+	background-color: #fff;
+	margin: 0;
+	width: 14px;
+	height: 14px;
+	border: 1px solid #ff4a76;
+	border-radius: 50%;
+}
+
+input[type='radio']:checked {
+	border: 4px solid #ff4a76;
 }

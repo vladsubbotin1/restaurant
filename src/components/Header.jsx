@@ -7,32 +7,34 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
 	return (
-		<div className='header'>
-			<Link to={'/'}>
-				<img className='header__logo' src={Logo} alt='logo' />
-			</Link>
+		<div className='wrapper'>
+			<div className='header'>
+				<Link to={'/'}>
+					<img className='header__logo' src={Logo} alt='logo' />
+				</Link>
 
-			<ul className='menu'>
-				<li className='menu__item'>Ресторанам</li>
-				<li className='menu__item'>Курьерам</li>
-				<li className='menu__item'>Компаниям</li>
-			</ul>
-			<div className='user'>
-				<div className='delivery'>
-					<div className='location'>
-						<img src={Location} alt='location' />
-						<span>Б. Казачья, 18</span>
+				<ul className='menu'>
+					<li className='menu__item'>Ресторанам</li>
+					<li className='menu__item'>Курьерам</li>
+					<li className='menu__item'>Компаниям</li>
+				</ul>
+				<div className='user'>
+					<div className='delivery'>
+						<div className='location'>
+							<img src={Location} alt='location' />
+							<span>Б. Казачья, 18</span>
+						</div>
+						<div className='cart'>
+							<img src={Cart} alt='cart' />
+							<span>1080P</span>
+						</div>
 					</div>
-					<div className='cart'>
-						<img src={Cart} alt='cart' />
-						<span>1080P</span>
+					<div className='city'>
+						<span>Саратов</span>
 					</div>
-				</div>
-				<div className='city'>
-					<span>Саратов</span>
-				</div>
-				<div className='pfp'>
-					<img src={UserPFP} alt='userpfp' />
+					<div className='pfp'>
+						<img src={UserPFP} alt='userpfp' />
+					</div>
 				</div>
 			</div>
 		</div>
