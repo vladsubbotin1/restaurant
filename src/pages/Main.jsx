@@ -9,6 +9,13 @@ import Search from '../assets/icons/search.svg'
 import DeliveryTime from '../assets/icons/delivery-time.svg'
 import RestaurantCard from '../components/RestaurantCard'
 import Footer from '../components/Footer'
+import { useState } from 'react'
+
+// const [flags, setflags] = useState('active');
+
+// 	const increas = () => {
+// 		setCounter(count => count + 1)
+// 	}
 
 const Main = () => {
 	return (
