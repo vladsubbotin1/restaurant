@@ -66,10 +66,35 @@
 		}
 	}
 	&__price {
-		@include vertical-flex;
+		display: flex;
+		align-items: center;
+		gap: 20px;
 		font-weight: 700;
 		font-size: 36px;
 		line-height: 44px;
+		padding: 7px;
+		cursor: pointer;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.15);
+			backdrop-filter: blur(1.5px);
+			border-radius: 10px;
+		}
+
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 30px;
+			height: 30px;
+			border: 1px solid #fff;
+			border-radius: 50%;
+		}
+
+		img {
+			width: 15px;
+			height: 15px;
+		}
 	}
 }
 

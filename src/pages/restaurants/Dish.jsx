@@ -1,6 +1,7 @@
 import Header from '../../components/Header'
 import SideCart from '../../components/SideCart'
 import FooterBig from '../../components/FooterBig'
+import Cart from '../../assets/icons/cart.svg'
 import './Dish.scss'
 
 const Granola = () => {
@@ -32,7 +33,12 @@ const Granola = () => {
 									<span>Масса </span>
 									<span>300 гр.</span>
 								</div>
-								<div className='dish-card__price'>144₽</div>
+								<div className='dish-card__price'>
+									<span>144₽</span>
+									<div>
+										<img src={Cart} alt='cart' />
+									</div>
+								</div>
 							</div>
 						</div>
 						<div className='dish-desc'>

@@ -4,25 +4,25 @@ import './styles/Menu.scss'
 const Menu = props => {
 	const content = props.items.map(item => (
 		<div className='restaurant-menu__item'>
-			<Link to='/seoul/dish'>
-				<div className='restaurant-menu__heading-container'>
-					<div>
+			<div className='restaurant-menu__heading-container'>
+				<div>
+					<Link to='/seoul/dish'>
 						<span className='restaurant-menu__heading'>{item.heading}</span>
-						<span className='restaurant-menu__weight'>{item.weight}</span>
-					</div>
-					<span className='restaurant-menu__price'>{item.price}</span>
+					</Link>
+					<span className='restaurant-menu__weight'>{item.weight}</span>
 				</div>
-				<div className='restaurant-menu__desc-container'>
-					<span className='restaurant-menu__desc'>{item.desc}</span>
-					<span className='restaurant-menu__old-price'>{item.oldPrice}</span>
-				</div>
-				<img
-					src={require('../assets/images/restaurants/Seoul/'.concat(
-						`${item.imgUrl}`
-					))}
-					alt='item'
-				/>
-			</Link>
+				<span className='restaurant-menu__price'>{item.price}</span>
+			</div>
+			<div className='restaurant-menu__desc-container'>
+				<span className='restaurant-menu__desc'>{item.desc}</span>
+				<span className='restaurant-menu__old-price'>{item.oldPrice}</span>
+			</div>
+			<img
+				src={require('../assets/images/restaurants/Seoul/'.concat(
+					`${item.imgUrl}`
+				))}
+				alt='item'
+			/>
 		</div>
 	))
 	return (

@@ -52,10 +52,16 @@
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 10px;
 	}
 	&__heading {
 		@include heading-text;
 		margin-right: 10px;
+		transition: 0.3s;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	&__weight {
 		@include desc-text;
