@@ -147,6 +147,7 @@
 		}
 	}
 	&__delivery-time {
+		cursor: pointer;
 		@include border-gray;
 		@include flex-center-vertical;
 		min-height: 60px;

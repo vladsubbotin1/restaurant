@@ -16,6 +16,7 @@ const Seoul = () => {
 			desc: 'Гранола с орехами, классическим йогуртом и фруктами на выбор',
 			oldPrice: '180₽',
 			imgUrl: 'granola.jpg',
+			link: '/seoul/granola',
 		},
 		{
 			heading: 'Название блюда',
@@ -148,7 +149,7 @@ const Seoul = () => {
 								<div className='flags__item'>Супы</div>
 							</div>
 							<RestaurantInformer
-								type='Sale'
+								type='Gift'
 								heading='Блюдо в подарок'
 								text='Суп-лапша с курицей в подарок при заказе от 750₽ без учёта доставки'
 							/>

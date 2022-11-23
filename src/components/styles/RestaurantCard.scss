@@ -19,6 +19,35 @@
 		img {
 			cursor: pointer;
 		}
+
+		&-inactive {
+			color: #666;
+
+			&:hover {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&__img-wrapper {
+		position: relative;
+	}
+
+	&__closed {
+		position: absolute;
+		bottom: 4px;
+		right: 0;
+		height: 40px;
+		width: 140px;
+		background-color: #ff4a76;
+		color: #fff;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 18px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__text {

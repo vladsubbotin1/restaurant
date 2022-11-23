@@ -11,13 +11,19 @@ import RestaurantCard from '../components/RestaurantCard'
 import Footer from '../components/Footer'
 import { useState } from 'react'
 
-// const [flags, setflags] = useState('active');
-
-// 	const increas = () => {
-// 		setCounter(count => count + 1)
-// 	}
-
 const Main = () => {
+	const [flagStatus, setFlagStatus] = useState('delivery')
+
+	const delivery = () => {
+		setFlagStatus('delivery')
+	}
+	const nearby = () => {
+		setFlagStatus('nearby')
+	}
+	const book = () => {
+		setFlagStatus('book')
+	}
+
 	return (
 		<>
 			<div className='wrapper'>
@@ -48,9 +54,36 @@ const Main = () => {
 				<RestaurantType />
 				<div className='options'>
 					<div className='flags'>
-						<div className='flags__item'>Рестораны рядом</div>
-						<div className='flags__item'>Забронировать стол</div>
-						<div className='flags__item flags__item--active'>Доставка</div>
+						<div
+							onClick={nearby}
+							className={
+								flagStatus == 'nearby'
+									? 'flags__item flags__item--active'
+									: 'flags__item '
+							}
+						>
+							Рестораны рядом
+						</div>
+						<div
+							onClick={book}
+							className={
+								flagStatus == 'book'
+									? 'flags__item flags__item--active'
+									: 'flags__item '
+							}
+						>
+							Забронировать стол
+						</div>
+						<div
+							onClick={delivery}
+							className={
+								flagStatus == 'delivery'
+									? 'flags__item flags__item--active'
+									: 'flags__item '
+							}
+						>
+							Доставка
+						</div>
 					</div>
 					<div className='filter'>
 						<img src={Filter} alt='filter' />

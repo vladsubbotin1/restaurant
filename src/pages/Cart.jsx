@@ -6,14 +6,14 @@ import visa from '../assets/icons/visa.svg'
 import { React, useState } from 'react'
 
 const Cart = () => {
-	const [counter, setCounter] = useState(0)
+	const [counter, setCounter] = useState(1)
 
 	const increase = () => {
 		setCounter(count => count + 1)
 	}
 
 	const decrease = () => {
-		setCounter(count => count - 1)
+		if (counter > 1) setCounter(count => count - 1)
 	}
 
 	return (

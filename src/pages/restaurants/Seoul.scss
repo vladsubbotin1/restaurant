@@ -60,11 +60,26 @@ $content-width: 765px;
 		}
 	}
 	&__book {
+		padding: 12px;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.15);
+			backdrop-filter: blur(1.5px);
+			border-radius: 10px;
+		}
+
 		img {
 			margin-right: 20px;
 		}
 	}
 	&__info {
+		padding: 12px;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.15);
+			backdrop-filter: blur(1.5px);
+			border-radius: 10px;
+		}
 		img {
 			margin-left: 20px;
 		}
