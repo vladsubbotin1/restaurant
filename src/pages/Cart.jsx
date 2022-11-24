@@ -4,17 +4,36 @@ import FooterBig from '../components/FooterBig'
 import './Cart.scss'
 import visa from '../assets/icons/visa.svg'
 import { React, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import Modal from '../components/Modal'
+import Alfabank from '../assets/images/alfabank.png'
+import Sberbank from '../assets/images/sberbank.png'
+import Plus from '../assets/icons/plus.svg'
 
 const Cart = () => {
+	const [modalOpen, setModalOpen] = useState(false)
+	const close = () => setModalOpen(false)
+	const open = () => setModalOpen(true)
+
 	const [counter, setCounter] = useState(1)
-
-	const increase = () => {
-		setCounter(count => count + 1)
-	}
-
+	const increase = () => setCounter(count => count + 1)
 	const decrease = () => {
 		if (counter > 1) setCounter(count => count - 1)
 	}
+
+	const ModalContent = (
+		<div className='modal__wrapper'>
+			<div className='modal__heading'>Мои карты</div>
+			<div className='modal__card-wrapper'>
+				<img src={Alfabank} alt='alfabank' />
+				<img src={Sberbank} alt='Sberbank' />
+			</div>
+			<div className='modal__add-card'>
+				<img src={Plus} alt='plus' />
+				<span>Добавить новую карту</span>
+			</div>
+		</div>
+	)
 
 	return (
 		<>
@@ -150,7 +169,12 @@ const Cart = () => {
 
 									<h5 className='cart__title'>Карта</h5>
 
-									<div className='cart__credit-card'>
+									<div
+										className='cart__credit-card'
+										onClick={() => {
+											modalOpen ? close() : open()
+										}}
+									>
 										<span>1234</span>
 										<img src={visa} alt='visa' />
 									</div>
@@ -191,6 +215,19 @@ const Cart = () => {
 					</aside>
 				</div>
 			</div>
+			<AnimatePresence
+				initial={false}
+				exitBeforeEnter={true}
+				onExitComplete={() => null}
+			>
+				{modalOpen && (
+					<Modal
+						text={ModalContent}
+						modalOpen={modalOpen}
+						handleClose={close}
+					/>
+				)}
+			</AnimatePresence>{' '}
 			<FooterBig />
 		</>
 	)
