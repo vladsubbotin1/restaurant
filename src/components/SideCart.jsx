@@ -65,7 +65,7 @@ const SideCart = props => {
 							<span className='side-cart__name'>Скидка 20%&nbsp;</span>
 							<span className='side-cart__discount'>-72₽</span>
 						</div>
-						<div class='divider' style={{ margin: '5px 0' }}></div>
+						<div className='divider' style={{ margin: '5px 0' }}></div>
 						<div className='side-cart__item'>
 							<span className='side-cart__delivery'>Доставка&nbsp;</span>
 							<span className='side-cart__price'>100₽</span>

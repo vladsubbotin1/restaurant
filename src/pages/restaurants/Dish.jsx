@@ -2,9 +2,29 @@ import Header from '../../components/Header'
 import SideCart from '../../components/SideCart'
 import FooterBig from '../../components/FooterBig'
 import Cart from '../../assets/icons/cart.svg'
+import Dislike from '../../assets/icons/dislike.svg'
+import Like from '../../assets/icons/like.svg'
 import './Dish.scss'
+import { useState } from 'react'
 
 const Granola = () => {
+	const [likes, setLikes] = useState(563)
+	const [isLiked, setIsLiked] = useState(false)
+
+	const like = () => {
+		if (!isLiked === true) {
+			setLikes(like => like + 1)
+			setIsLiked(true)
+		}
+	}
+
+	const dislike = () => {
+		if (likes > 0 && !isLiked === true) {
+			setLikes(like => like - 1)
+			setIsLiked(true)
+		}
+	}
+
 	return (
 		<>
 			<div className='wrapper'>
@@ -42,7 +62,7 @@ const Granola = () => {
 							</div>
 						</div>
 						<div className='dish-desc'>
-							<div class='dish-desc__wrapper'>
+							<div className='dish-desc__wrapper'>
 								<div className='dish-desc__item'>
 									<div className='dish-desc__desc-heading'>Описание</div>
 									<div className='dish-desc__desc'>
@@ -60,7 +80,34 @@ const Granola = () => {
 									</div>
 									<div className='dish-desc__allergy'>Осторожно, аллергия!</div>
 								</div>
-								<div className='dish-desc__item'></div>
+								<div className='dish-desc__item'>
+									<div className='dish-desc__row'>
+										<div
+											style={{
+												display: 'flex',
+												flexDirection: 'column',
+												gap: '10px',
+											}}
+										>
+											<span style={{ color: '#999999' }}>Цена</span>
+											<span className='dish-desc__price'>144₽</span>
+										</div>
+										<div
+											style={{
+												display: 'flex',
+												flexDirection: 'column',
+												gap: '10px',
+											}}
+										>
+											<span style={{ color: '#999999' }}>Рейтинг</span>
+											<div className='dish-desc__likes-wrapper'>
+												<img src={Dislike} alt='Dislike' onClick={dislike} />
+												<span className='dish-desc__likes-value'>{likes}</span>
+												<img src={Like} alt='Like' onClick={like} />
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
