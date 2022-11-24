@@ -6,6 +6,7 @@
 		border-radius: 15px;
 		padding: 20px;
 	}
+
 	&__heading {
 		display: flex;
 		justify-content: space-between;
@@ -15,6 +16,48 @@
 		img {
 			cursor: pointer;
 		}
+	}
+
+	&__dishes {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__about {
+		display: inline-flex;
+		flex-wrap: wrap;
+		max-width: 164px;
+	}
+
+	&__quantity {
+		@include text-s;
+	}
+	&__weight {
+		@include text-s;
+	}
+	&__topping {
+		@include text-s;
+		font-size: 12px;
+	}
+	&__gift {
+		width: 18px;
+		height: 20px;
+		min-width: 37px;
+	}
+	&__price {
+		min-width: 37px;
+	}
+	&__discount {
+		color: #ff4a76;
+	}
+	&__delivery {
+		margin-bottom: 200px;
 	}
 
 	&__button {
@@ -30,5 +73,9 @@
 		line-height: 20px;
 		color: #ffffff;
 		cursor: pointer;
+
+		&:hover {
+			background: linear-gradient(95.32deg, #ffa181 0%, #f9698d 100%);
+		}
 	}
 }

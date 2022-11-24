@@ -141,7 +141,7 @@ const Seoul = () => {
 						</div>
 						<div className='restaurant-menu__root'>
 							<div className='restaurant-menu__filter flags'>
-								<div className='flags__item flags__item--pink'>Акции</div>
+								<div className='flags__item flags__item--active'>Акции</div>
 								<div className='flags__item'>Бизнес-ланч</div>
 								<div className='flags__item'>Завтрак</div>
 								<div className='flags__item'>Салаты</div>

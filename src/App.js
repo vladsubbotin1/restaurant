@@ -5,10 +5,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Seoul from './pages/restaurants/Seoul'
 import Cart from './pages/Cart'
 import Dish from './pages/restaurants/Dish'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
 	return (
 		<Router>
+			<ScrollToTop />
 			<Routes>
 				<Route path='/' element={<Main />} />
 				<Route path='/cart' element={<Cart />} />
