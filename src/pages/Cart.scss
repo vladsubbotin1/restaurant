@@ -14,11 +14,16 @@
 
 .column-main {
 	min-width: 74.39%;
-	background: #f5f5f5;
 	border-radius: 15px;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	background: #fff !important;
+
+	&__options {
+		width: 100%;
+		background: #f5f5f5;
+	}
 
 	&__person-count {
 		display: flex;

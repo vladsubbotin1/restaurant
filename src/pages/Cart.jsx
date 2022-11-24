@@ -23,161 +23,163 @@ const Cart = () => {
 			<div className='wrapper'>
 				<div className='column-container'>
 					<div className='column-main'>
-						<div className='column-main__primary'>
-							<h5 className='cart__title'>Адрес доставки</h5>
-							<div className='column-main__row'>
+						<div class='column-main__options'>
+							<div className='column-main__primary'>
+								<h5 className='cart__title'>Адрес доставки</h5>
+								<div className='column-main__row'>
+									<input
+										className='cart__address-input'
+										type='text'
+										id='address'
+										name='address'
+										placeholder='Ваш адрес'
+									/>
+								</div>
+								<div className='column-main__row'>
+									<div className='span-4'>
+										<div className='column-main__subtitle'>Квартира/офис</div>
+										<input
+											type='text'
+											id='flat'
+											name='flat'
+											className='cart__address-input'
+										/>
+									</div>
+									<div className='span-4'>
+										<div className='column-main__subtitle'>Подъезд</div>
+										<input
+											type='text'
+											id='flat'
+											name='flat'
+											className='cart__address-input'
+										/>
+									</div>
+									<div className='span-4'>
+										<div className='column-main__subtitle'>Этаж</div>
+										<input
+											type='text'
+											id='flat'
+											name='flat'
+											className='cart__address-input'
+										/>
+									</div>
+									<div className='span-4'>
+										<div className='column-main__subtitle'>Домофон</div>
+										<input
+											type='text'
+											id='flat'
+											name='flat'
+											className='cart__address-input'
+										/>
+									</div>
+								</div>
+
+								<div className='column-main__subtitle'>Комментарий</div>
 								<input
-									className='cart__address-input'
+									className='cart__address-input cart__comment'
 									type='text'
-									id='address'
-									name='address'
-									placeholder='Ваш адрес'
+									id='comment'
+									name='comment'
 								/>
-							</div>
-							<div className='column-main__row'>
-								<div className='span-4'>
-									<div className='column-main__subtitle'>Квартира/офис</div>
-									<input
-										type='text'
-										id='flat'
-										name='flat'
-										className='cart__address-input'
-									/>
-								</div>
-								<div className='span-4'>
-									<div className='column-main__subtitle'>Подъезд</div>
-									<input
-										type='text'
-										id='flat'
-										name='flat'
-										className='cart__address-input'
-									/>
-								</div>
-								<div className='span-4'>
-									<div className='column-main__subtitle'>Этаж</div>
-									<input
-										type='text'
-										id='flat'
-										name='flat'
-										className='cart__address-input'
-									/>
-								</div>
-								<div className='span-4'>
-									<div className='column-main__subtitle'>Домофон</div>
-									<input
-										type='text'
-										id='flat'
-										name='flat'
-										className='cart__address-input'
-									/>
+
+								<h5 className='cart__title'>Способ доставки</h5>
+								<div className='cart__form-control'>
+									<label className='cart__label' for='delivery'>
+										<input
+											type='radio'
+											id='delivery'
+											name='payment'
+											value='delivery'
+											defaultChecked
+										/>
+										Картой онлайн
+									</label>
+									<label className='cart__label' for='pickup'>
+										<input
+											type='radio'
+											id='pickup'
+											name='payment'
+											value='pickup'
+										/>
+										Картой курьеру
+									</label>
+
+									<label className='cart__label' for='restaurant'>
+										<input
+											type='radio'
+											id='restaurant'
+											name='payment'
+											value='restaurant'
+										/>
+										Наличными курьеру
+									</label>
 								</div>
 							</div>
+							<div className='column-main__delivery'>
+								<h5 className='cart__title'>Способ доставки</h5>
+								<div className='cart__form-control'>
+									<label className='cart__label' for='delivery'>
+										<input
+											type='radio'
+											id='delivery'
+											name='delivery-type'
+											value='delivery'
+											defaultChecked
+										/>
+										Доставка на дом
+									</label>
+									<label className='cart__label' for='pickup'>
+										<input
+											type='radio'
+											id='pickup'
+											name='delivery-type'
+											value='pickup'
+										/>
+										Самовывоз
+									</label>
 
-							<div className='column-main__subtitle'>Комментарий</div>
-							<input
-								className='cart__address-input cart__comment'
-								type='text'
-								id='comment'
-								name='comment'
-							/>
+									<label className='cart__label' for='restaurant'>
+										<input
+											type='radio'
+											id='restaurant'
+											name='delivery-type'
+											value='restaurant'
+										/>
+										В ресторане
+									</label>
 
-							<h5 className='cart__title'>Способ доставки</h5>
-							<div className='cart__form-control'>
-								<label className='cart__label' for='delivery'>
-									<input
-										type='radio'
-										id='delivery'
-										name='payment'
-										value='delivery'
-										defaultChecked
-									/>
-									Картой онлайн
-								</label>
-								<label className='cart__label' for='pickup'>
-									<input
-										type='radio'
-										id='pickup'
-										name='payment'
-										value='pickup'
-									/>
-									Картой курьеру
-								</label>
+									<h5 className='cart__title'>Карта</h5>
 
-								<label className='cart__label' for='restaurant'>
-									<input
-										type='radio'
-										id='restaurant'
-										name='payment'
-										value='restaurant'
-									/>
-									Наличными курьеру
-								</label>
-							</div>
-						</div>
-						<div className='column-main__delivery'>
-							<h5 className='cart__title'>Способ доставки</h5>
-							<div className='cart__form-control'>
-								<label className='cart__label' for='delivery'>
-									<input
-										type='radio'
-										id='delivery'
-										name='delivery-type'
-										value='delivery'
-										defaultChecked
-									/>
-									Доставка на дом
-								</label>
-								<label className='cart__label' for='pickup'>
-									<input
-										type='radio'
-										id='pickup'
-										name='delivery-type'
-										value='pickup'
-									/>
-									Самовывоз
-								</label>
-
-								<label className='cart__label' for='restaurant'>
-									<input
-										type='radio'
-										id='restaurant'
-										name='delivery-type'
-										value='restaurant'
-									/>
-									В ресторане
-								</label>
-
-								<h5 className='cart__title'>Карта</h5>
-
-								<div className='cart__credit-card'>
-									<span>1234</span>
-									<img src={visa} alt='visa' />
+									<div className='cart__credit-card'>
+										<span>1234</span>
+										<img src={visa} alt='visa' />
+									</div>
 								</div>
 							</div>
-						</div>
-						<div className='column-main__total'>
-							<div className='column-main__total-left'>
-								<div>
-									<h5 className='column-main__subtitle'>Время доставки</h5>
-									<span>~120 мин</span>
+							<div className='column-main__total'>
+								<div className='column-main__total-left'>
+									<div>
+										<h5 className='column-main__subtitle'>Время доставки</h5>
+										<span>~120 мин</span>
+									</div>
+									<div>
+										<h5 className='column-main__subtitle'>Итого</h5>
+										<span>1088₽</span>
+									</div>
 								</div>
-								<div>
-									<h5 className='column-main__subtitle'>Итого</h5>
-									<span>1088₽</span>
-								</div>
-							</div>
 
-							<div className='column-main__person-count'>
-								<span>Количество персон</span>
-								<div className='counter'>
-									<button className='control__btn' onClick={decrease}>
-										-
-									</button>
-									<span className='counter__output'>{counter}</span>
+								<div className='column-main__person-count'>
+									<span>Количество персон</span>
+									<div className='counter'>
+										<button className='control__btn' onClick={decrease}>
+											-
+										</button>
+										<span className='counter__output'>{counter}</span>
 
-									<button className='control__btn' onClick={increase}>
-										+
-									</button>
+										<button className='control__btn' onClick={increase}>
+											+
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
