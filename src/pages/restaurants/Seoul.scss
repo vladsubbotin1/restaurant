@@ -24,7 +24,7 @@ $content-width: 765px;
 		display: flex;
 		flex-direction: column;
 		padding: 0 75px 40px;
-		justify-content: end;
+		justify-content: flex-end;
 	}
 
 	&__heading {
@@ -111,7 +111,7 @@ $content-width: 765px;
 }
 
 .column-side {
-	min-width: 23.17%;
+	min-width: 23.8%;
 }
 
 .side-cart {

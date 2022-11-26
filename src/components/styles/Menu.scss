@@ -34,7 +34,8 @@
 }
 .restaurant-menu {
 	&__item {
-		width: 47.97%;
+		min-width: 367px;
+		width: 367px;
 		height: 280px;
 		background: #ffffff;
 		border-radius: 15px;
@@ -57,6 +58,7 @@
 	}
 
 	&__img-wrapper {
+		width: 100%;
 		position: relative;
 		transition: 0.3s;
 	}

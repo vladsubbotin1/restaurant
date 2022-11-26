@@ -5,9 +5,11 @@ import Cart from '../../assets/icons/cart.svg'
 import Dislike from '../../assets/icons/dislike.svg'
 import Like from '../../assets/icons/like.svg'
 import './Dish.scss'
+import Share from '../../assets/icons/share.svg'
 import { useState } from 'react'
+import Menu from '../../components/Menu'
 
-const Granola = () => {
+const Dish = () => {
 	const [likes, setLikes] = useState(563)
 	const [isLiked, setIsLiked] = useState(false)
 
@@ -24,6 +26,54 @@ const Granola = () => {
 			setIsLiked(true)
 		}
 	}
+
+	const recommendItems = [
+		{
+			id: 1,
+			heading: 'Название блюда',
+			weight: '150гр',
+			price: '100₽',
+			desc: 'Описание блюда',
+			oldPrice: '200₽',
+			imgUrl: 'pancake.jpg',
+		},
+		{
+			id: 2,
+			heading: 'Название блюда',
+			weight: '150гр',
+			price: '100₽',
+			desc: 'Описание блюда',
+			oldPrice: '200₽',
+			imgUrl: 'muffin.jpg',
+		},
+		{
+			id: 3,
+			heading: 'Название блюда',
+			weight: '150гр',
+			price: '100₽',
+			desc: 'Описание блюда',
+			oldPrice: '200₽',
+			imgUrl: 'salad.jpg',
+		},
+		{
+			id: 4,
+			heading: 'Название блюда',
+			weight: '300гр',
+			price: '144₽',
+			desc: 'Описание блюда',
+			oldPrice: '180₽',
+			imgUrl: 'porridge.jpg',
+		},
+		{
+			id: 5,
+			heading: 'Название блюда',
+			weight: '150гр',
+			price: '100₽',
+			desc: 'Описание блюда',
+			oldPrice: '200₽',
+			imgUrl: 'soup.jpg',
+		},
+	]
 
 	return (
 		<>
@@ -82,23 +132,11 @@ const Granola = () => {
 								</div>
 								<div className='dish-desc__item'>
 									<div className='dish-desc__row'>
-										<div
-											style={{
-												display: 'flex',
-												flexDirection: 'column',
-												gap: '10px',
-											}}
-										>
+										<div className='dish-desc__price-wrapper'>
 											<span style={{ color: '#999999' }}>Цена</span>
 											<span className='dish-desc__price'>144₽</span>
 										</div>
-										<div
-											style={{
-												display: 'flex',
-												flexDirection: 'column',
-												gap: '10px',
-											}}
-										>
+										<div className='dish-desc__price-wrapper'>
 											<span style={{ color: '#999999' }}>Рейтинг</span>
 											<div className='dish-desc__likes-wrapper'>
 												<img src={Dislike} alt='Dislike' onClick={dislike} />
@@ -107,6 +145,28 @@ const Granola = () => {
 											</div>
 										</div>
 									</div>
+								</div>
+								<div className='dish-desc__buttons-wrapper'>
+									<button className='dish-desc__add-cart'>
+										Добавить в корзину
+									</button>
+									<div class='dish-desc__share'>
+										<img src={Share} alt='button' />
+										<span className='grey-text'>Поделиться</span>
+									</div>
+								</div>
+							</div>
+
+							<div className='divider'></div>
+
+							<div className='dish-recommend'>
+								<h5 className='dish-recommend__heading'>Рекомендуем также</h5>
+								<div class='dish-recommend__card-container'>
+									<Menu
+										items={recommendItems}
+										marginTop='noMargin'
+										slider='yes'
+									/>
 								</div>
 							</div>
 						</div>
@@ -121,4 +181,4 @@ const Granola = () => {
 	)
 }
 
-export default Granola
+export default Dish

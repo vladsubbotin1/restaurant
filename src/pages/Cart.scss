@@ -44,6 +44,9 @@
 	}
 
 	&__delivery {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
 		width: 35%;
 		padding: 20px;
 		border-left: 1px solid #dddddd;
@@ -86,11 +89,43 @@
 }
 
 .cart {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	&__row {
+		display: flex;
+		gap: 60px;
+	}
+
 	&__title {
 		font-weight: 700;
 		font-size: 18px;
 		line-height: 22px;
 		margin-bottom: 20px;
+	}
+
+	&__date-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 13px;
+	}
+
+	&__date-input,
+	&__time-input {
+		width: 160px;
+		height: 35px;
+		display: flex;
+		padding: 10px;
+		border: 1px solid #dddddd;
+		border-radius: 5px;
+	}
+
+	&__date-input {
+		display: flex;
+		justify-content: space-between;
 	}
 
 	&__label {
@@ -115,7 +150,6 @@
 
 	&__comment {
 		padding-bottom: 160px;
-		margin-bottom: 30px;
 	}
 
 	&__credit-card {

@@ -11,6 +11,7 @@
 		display: flex;
 		justify-content: space-between;
 		@include heading-s;
+		font-size: 18px;
 		margin-bottom: 30px;
 
 		img {
@@ -32,7 +33,7 @@
 	&__about {
 		display: inline-flex;
 		flex-wrap: wrap;
-		max-width: 164px;
+		max-width: 165px;
 	}
 
 	&__quantity {

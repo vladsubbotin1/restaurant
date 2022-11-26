@@ -10,6 +10,7 @@ import FooterBig from '../../components/FooterBig'
 const Seoul = () => {
 	const saleItems = [
 		{
+			id: 1,
 			heading: 'Гранола с йогуртом',
 			weight: '300гр',
 			price: '144₽',
@@ -19,6 +20,7 @@ const Seoul = () => {
 			link: '/seoul/granola',
 		},
 		{
+			id: 2,
 			heading: 'Название блюда',
 			weight: '150гр',
 			price: '100₽',
@@ -27,6 +29,7 @@ const Seoul = () => {
 			imgUrl: 'omelette.jpg',
 		},
 		{
+			id: 3,
 			heading: 'Название блюда',
 			weight: '150гр',
 			price: '100₽',
@@ -35,6 +38,7 @@ const Seoul = () => {
 			imgUrl: 'muffin.jpg',
 		},
 		{
+			id: 4,
 			heading: 'Название блюда',
 			weight: '150гр',
 			price: '100₽',
@@ -45,6 +49,7 @@ const Seoul = () => {
 	]
 	const lunchItems = [
 		{
+			id: 1,
 			heading: 'Гранола с йогуртом',
 			weight: '300гр',
 			price: '144₽',
@@ -53,6 +58,7 @@ const Seoul = () => {
 			imgUrl: 'soup.jpg',
 		},
 		{
+			id: 2,
 			heading: 'Название блюда',
 			weight: '150гр',
 			price: '100₽',
@@ -63,6 +69,7 @@ const Seoul = () => {
 	]
 	const breakfastItems = [
 		{
+			id: 1,
 			heading: 'Название блюда',
 			weight: '300гр',
 			price: '144₽',
@@ -71,6 +78,7 @@ const Seoul = () => {
 			imgUrl: 'porridge.jpg',
 		},
 		{
+			id: 2,
 			heading: 'Название блюда',
 			weight: '150гр',
 			price: '100₽',
@@ -79,6 +87,7 @@ const Seoul = () => {
 			imgUrl: 'soup.jpg',
 		},
 		{
+			id: 3,
 			heading: 'Название блюда',
 			weight: '150гр',
 			price: '100₽',
@@ -87,6 +96,7 @@ const Seoul = () => {
 			imgUrl: 'muffin.jpg',
 		},
 		{
+			id: 4,
 			heading: 'Название блюда',
 			weight: '150гр',
 			price: '100₽',
@@ -95,6 +105,7 @@ const Seoul = () => {
 			imgUrl: 'pancake.jpg',
 		},
 		{
+			id: 5,
 			heading: 'Название блюда',
 			weight: '150гр',
 			price: '100₽',
@@ -103,6 +114,7 @@ const Seoul = () => {
 			imgUrl: 'salad.jpg',
 		},
 		{
+			id: 6,
 			heading: 'Название блюда',
 			weight: '150гр',
 			price: '100₽',
@@ -111,6 +123,7 @@ const Seoul = () => {
 			imgUrl: 'granola.jpg',
 		},
 	]
+
 	return (
 		<>
 			<div className='wrapper'>

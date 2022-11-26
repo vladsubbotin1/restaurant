@@ -100,12 +100,13 @@
 		@include border-gray;
 		display: flex;
 		align-items: center;
-
 		font-weight: 500;
 		font-size: 14px;
 		line-height: 17px;
 		padding: 11px 20px;
 		cursor: pointer;
+		user-select: none;
+
 		&--active {
 			background: #ff4a76;
 			color: #fff;

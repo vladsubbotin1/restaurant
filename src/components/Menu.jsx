@@ -5,7 +5,7 @@ import { ReactComponent as Cart } from '../assets/icons/cart.svg'
 
 const Menu = props => {
 	const content = props.items.map(item => (
-		<div className='restaurant-menu__item'>
+		<div className='restaurant-menu__item' key={item.id}>
 			<div className='restaurant-menu__heading-container'>
 				<div>
 					<Link to='/seoul/dish'>
@@ -34,10 +34,23 @@ const Menu = props => {
 		</div>
 	))
 	return (
-		<div className='restaurant-cat'>
-			<span className='restaurant-cat__heading'>{props.categoryName}</span>
-			<span className='restaurant-cat__amount'>{props.itemAmount}</span>
-			<div className='restaurant-cat__list'>{content}</div>
+		<div
+			className='restaurant-cat'
+			style={{ marginTop: props.marginTop === 'noMargin' ? '0px' : '' }}
+		>
+			{props.marginTop !== 'noMargin' && (
+				<>
+					<span className='restaurant-cat__heading'>{props.categoryName}</span>
+					<span className='restaurant-cat__amount'>{props.itemAmount}</span>
+				</>
+			)}
+
+			<div
+				className='restaurant-cat__list'
+				style={{ flexWrap: props.slider === 'yes' ? 'nowrap' : '' }}
+			>
+				{content}
+			</div>
 		</div>
 	)
 }

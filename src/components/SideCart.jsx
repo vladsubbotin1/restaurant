@@ -1,66 +1,77 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ReactComponent as Gift } from '../assets/icons/gift-pink.svg'
 import Trash from '../assets/icons/trash.svg'
 import '../components/styles/SideCart.scss'
 
 const SideCart = props => {
+	const order = [
+		{
+			id: 1,
+			name: 'Гранола с йогуртом',
+			weight: '300гр',
+			topping: 'Черная смородина',
+			quantity: '2',
+			price: '360₽',
+		},
+		{
+			id: 2,
+			name: 'Название блюда',
+			weight: '5гр',
+			topping: 'Добавки при наличии выбора таковых',
+			quantity: '1',
+			price: '100₽',
+		},
+		{
+			id: 3,
+			name: 'Название блюда',
+			weight: '10гр',
+			quantity: '5',
+			price: '500₽',
+		},
+		{
+			id: 4,
+			name: 'Длинное название блюда',
+			weight: '15гр',
+			quantity: '1',
+			price: '100₽',
+		},
+		{
+			id: 5,
+			name: 'Суп-лапша с курицей',
+			weight: '250гр',
+			quantity: '1',
+			price: <Gift className='side-cart__gift' alt='gift'></Gift>,
+		},
+	]
+
+	const [orders, setOrders] = useState(order)
+
+	const clearOrder = () => {
+		setOrders([])
+	}
+
 	return (
 		<>
 			<div className='side-cart'>
 				<div className='side-cart__list'>
 					<div className='side-cart__heading'>
 						<span>Мой заказ</span>
-						<img src={Trash} alt='trash-icon' />
+						<img src={Trash} alt='trash-icon' onClick={clearOrder} />
 					</div>
 					<div className='side-cart__dishes'>
-						<div className='side-cart__item'>
-							<div className='side-cart__about'>
-								<span className='side-cart__name'>Гранола с йогуртом </span>
-								<span className='side-cart__weight'>300гр</span>
-								<span className='side-cart__topping'>Черная смородина</span>
+						{orders.map(order => (
+							<div className='side-cart__item' key={order.id}>
+								<div className='side-cart__about'>
+									<span className='side-cart__name'>{order.name}&nbsp;</span>
+									<span className='side-cart__weight'>{order.weight}</span>
+									<span className='side-cart__topping'>{order.topping}</span>
+								</div>
+								<div className='side-cart__quantity'>{order.quantity}</div>
+								<div className='side-cart__price'>{order.price}</div>
 							</div>
-							<div className='side-cart__quantity'>2</div>
-							<div className='side-cart__price'>360₽</div>
-						</div>
-						<div className='side-cart__item'>
-							<div className='side-cart__about'>
-								<span className='side-cart__name'>Название блюда&nbsp;</span>
-								<span className='side-cart__weight'>5гр</span>
-								<span className='side-cart__topping'>
-									Добавки при наличии выбора таковых
-								</span>
-							</div>
-							<div className='side-cart__quantity'>1</div>
-							<div className='side-cart__price'>100₽</div>
-						</div>
-						<div className='side-cart__item'>
-							<div className='side-cart__about'>
-								<span className='side-cart__name'>Название блюда&nbsp;</span>
-								<span className='side-cart__weight'>10гр</span>
-							</div>
-							<div className='side-cart__quantity'>5</div>
-							<div className='side-cart__price'>500₽</div>
-						</div>
-						<div className='side-cart__item'>
-							<div className='side-cart__about'>
-								<span className='side-cart__name'>
-									Длинное название блюда&nbsp;
-								</span>
-								<span className='side-cart__weight'>15гр</span>
-							</div>
-							<div className='side-cart__quantity'>1</div>
-							<div className='side-cart__price'>100₽</div>
-						</div>
-						<div className='side-cart__item'>
-							<div className='side-cart__about'>
-								<span className='side-cart__name'>
-									Суп-лапша с курицей&nbsp;
-								</span>
-								<span className='side-cart__weight'>250гр</span>
-							</div>
-							<div className='side-cart__quantity'>1</div>
-							<Gift className='side-cart__gift' alt='gift'></Gift>
-						</div>
+						))}
+
 						<div className='side-cart__item'>
 							<span className='side-cart__name'>Скидка 20%&nbsp;</span>
 							<span className='side-cart__discount'>-72₽</span>
