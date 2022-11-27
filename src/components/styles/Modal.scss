@@ -26,12 +26,25 @@
 		display: flex;
 		align-items: center;
 		gap: 30px;
+
+		img {
+			transform: scale(0.98);
+			transition: 0.4s;
+			cursor: pointer;
+
+			&:hover {
+				transform: scale(1);
+			}
+		}
 	}
 
 	&__add-card {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 17px;
 		color: #ff4a76;
 		width: 285px;
 		height: 50px;
@@ -39,10 +52,17 @@
 		border-radius: 10px;
 		position: relative;
 		cursor: pointer;
+		background-color: #fff;
+		transition: 0.3s;
+
+		&:hover {
+			background-color: #ff4a7712;
+		}
 
 		img {
 			position: absolute;
 			left: 10px;
+			z-index: 100;
 		}
 	}
 

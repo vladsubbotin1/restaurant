@@ -6,8 +6,11 @@ import RestaurantInformer from '../../components/RestaurantInformer'
 import SideCart from '../../components/SideCart'
 import Menu from '../../components/Menu'
 import FooterBig from '../../components/FooterBig'
+import { useState } from 'react'
 
 const Seoul = () => {
+	const [flagStatus, setFlagStatus] = useState('sale')
+
 	const saleItems = [
 		{
 			id: 1,
@@ -147,6 +150,17 @@ const Seoul = () => {
 									</div>
 									<div className='restaurant-header__info'>
 										<span>Информация о ресторане</span>
+										<div className='restaurant-header__tooltip'>
+											<h5>Название ресторана</h5>
+											<span>2-я Садовая улица, 111Д Доставка до 19:00</span>
+											<span> Домашняя Европейская Завтраки Ланчи ₽</span>
+											<span>
+												Исполнитель (продавец): ИП Иванов Иван Иванович, 411111,
+												ул Первая, д 1, кв 1, ИНН 111111111111, рег.номер
+												111111111111111.
+											</span>
+											<span>Режим работы: с 07:00 до 19:00</span>
+										</div>
 										<img src={Info} alt='info' />
 									</div>
 								</div>
@@ -154,12 +168,66 @@ const Seoul = () => {
 						</div>
 						<div className='restaurant-menu__root'>
 							<div className='restaurant-menu__filter flags'>
-								<div className='flags__item flags__item--active'>Акции</div>
-								<div className='flags__item'>Бизнес-ланч</div>
-								<div className='flags__item'>Завтрак</div>
-								<div className='flags__item'>Салаты</div>
-								<div className='flags__item'>Закуски</div>
-								<div className='flags__item'>Супы</div>
+								<div
+									onClick={() => setFlagStatus('sale')}
+									className={
+										flagStatus === 'sale'
+											? 'flags__item flags__item--active'
+											: 'flags__item '
+									}
+								>
+									Акции
+								</div>
+								<div
+									onClick={() => setFlagStatus('lunch')}
+									className={
+										flagStatus === 'lunch'
+											? 'flags__item flags__item--active'
+											: 'flags__item '
+									}
+								>
+									Бизнес-ланч
+								</div>
+								<div
+									onClick={() => setFlagStatus('breakfast')}
+									className={
+										flagStatus === 'breakfast'
+											? 'flags__item flags__item--active'
+											: 'flags__item '
+									}
+								>
+									Завтрак
+								</div>
+								<div
+									onClick={() => setFlagStatus('salad')}
+									className={
+										flagStatus === 'salad'
+											? 'flags__item flags__item--active'
+											: 'flags__item '
+									}
+								>
+									Салаты
+								</div>
+								<div
+									onClick={() => setFlagStatus('snacks')}
+									className={
+										flagStatus === 'snacks'
+											? 'flags__item flags__item--active'
+											: 'flags__item '
+									}
+								>
+									Закуски
+								</div>
+								<div
+									onClick={() => setFlagStatus('soup')}
+									className={
+										flagStatus === 'soup'
+											? 'flags__item flags__item--active'
+											: 'flags__item '
+									}
+								>
+									Супы
+								</div>
 							</div>
 							<RestaurantInformer
 								type='Gift'

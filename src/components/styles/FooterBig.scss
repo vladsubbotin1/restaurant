@@ -45,7 +45,12 @@
 		color: #999999;
 
 		li {
+			cursor: pointer;
 			margin-bottom: 15px;
+
+			&:hover {
+				color: #333;
+			}
 		}
 		li:last-of-type {
 			margin-bottom: 0px;
@@ -59,6 +64,7 @@
 
 		button {
 			all: unset;
+			cursor: pointer;
 		}
 	}
 }

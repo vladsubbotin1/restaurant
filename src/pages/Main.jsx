@@ -13,6 +13,7 @@ import { useState } from 'react'
 
 const Main = () => {
 	const [flagStatus, setFlagStatus] = useState('delivery')
+	const [inputStatus, setInputStatus] = useState(0)
 
 	const delivery = () => {
 		setFlagStatus('delivery')
@@ -22,6 +23,11 @@ const Main = () => {
 	}
 	const book = () => {
 		setFlagStatus('book')
+	}
+
+	const handleChange = e => {
+		setInputStatus(e.target.value)
+		console.log(inputStatus)
 	}
 
 	return (
@@ -37,11 +43,17 @@ const Main = () => {
 					</h1>
 					<div className='search-address__bar'>
 						<form action=''>
-							<input type='text' id='name' placeholder='Укажите ваш адрес' />
+							<input
+								type='text'
+								id='address'
+								placeholder='Укажите ваш адрес'
+								onChange={handleChange}
+							/>
 							<input
 								type='submit'
 								value='Найти'
 								className='search-address__submit'
+								style={{ opacity: inputStatus === 0 ? '0.5' : '1' }}
 							/>
 						</form>
 					</div>

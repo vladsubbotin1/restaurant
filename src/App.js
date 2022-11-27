@@ -6,6 +6,7 @@ import Seoul from './pages/restaurants/Seoul'
 import Cart from './pages/Cart'
 import Dish from './pages/restaurants/Dish'
 import ScrollToTop from './components/ScrollToTop'
+import Delivery from './pages/Delivery'
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 				<Route path='/cart' element={<Cart />} />
 				<Route path='/seoul' element={<Seoul />} />
 				<Route path='/seoul/dish' element={<Dish />} />
+				<Route path='/delivery' element={<Delivery />} />
 			</Routes>
 		</Router>
 	)

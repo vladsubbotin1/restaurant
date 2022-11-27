@@ -9,6 +9,7 @@ import Modal from '../components/Modal'
 import Alfabank from '../assets/images/alfabank.png'
 import Sberbank from '../assets/images/sberbank.png'
 import Plus from '../assets/icons/plus.svg'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
 	const [modalOpen, setModalOpen] = useState(false)
@@ -30,10 +31,10 @@ const Cart = () => {
 				<img src={Alfabank} alt='alfabank' />
 				<img src={Sberbank} alt='Sberbank' />
 			</div>
-			<div className='modal__add-card'>
+			<button className='modal__add-card'>
 				<img src={Plus} alt='plus' />
 				<span>Добавить новую карту</span>
-			</div>
+			</button>
 		</div>
 	)
 
@@ -101,7 +102,7 @@ const Cart = () => {
 			<div>
 				<h5 className='cart__title'>Оплата</h5>
 				<div className='cart__form-control'>
-					<label className='cart__label' for='delivery'>
+					<label className='cart__label' htmlFor='delivery'>
 						<input
 							type='radio'
 							id='delivery'
@@ -111,12 +112,12 @@ const Cart = () => {
 						/>
 						Картой онлайн
 					</label>
-					<label className='cart__label' for='pickup'>
+					<label className='cart__label' htmlFor='pickup'>
 						<input type='radio' id='pickup' name='payment' value='pickup' />
 						Картой курьеру
 					</label>
 
-					<label className='cart__label' for='restaurant'>
+					<label className='cart__label' htmlFor='restaurant'>
 						<input
 							type='radio'
 							id='restaurant'
@@ -146,12 +147,12 @@ const Cart = () => {
 			<div>
 				<h5 className='cart__title'>Оплата</h5>
 				<div className='cart__form-control'>
-					<label className='cart__label' for='delivery'>
+					<label className='cart__label' htmlFor='delivery'>
 						<input type='radio' id='delivery' name='payment' value='delivery' />
 						Картой онлайн
 					</label>
 
-					<label className='cart__label' for='restaurant'>
+					<label className='cart__label' htmlFor='restaurant'>
 						<input
 							type='radio'
 							id='restaurant'
@@ -213,7 +214,7 @@ const Cart = () => {
 				<div>
 					<h5 className='cart__title'>Оплата</h5>
 					<div className='cart__form-control'>
-						<label className='cart__label' for='delivery'>
+						<label className='cart__label' htmlFor='delivery'>
 							<input
 								type='radio'
 								id='delivery'
@@ -224,7 +225,7 @@ const Cart = () => {
 							Картой онлайн
 						</label>
 
-						<label className='cart__label' for='restaurant'>
+						<label className='cart__label' htmlFor='restaurant'>
 							<input
 								type='radio'
 								id='restaurant'
@@ -256,7 +257,7 @@ const Cart = () => {
 								<div>
 									<h5 className='cart__title'>Способ доставки</h5>
 									<div className='cart__form-control'>
-										<label className='cart__label' for='delivery'>
+										<label className='cart__label' htmlFor='delivery'>
 											<input
 												type='radio'
 												id='delivery'
@@ -267,7 +268,7 @@ const Cart = () => {
 											/>
 											Доставка на дом
 										</label>
-										<label className='cart__label' for='pickup'>
+										<label className='cart__label' htmlFor='pickup'>
 											<input
 												type='radio'
 												id='pickup'
@@ -278,7 +279,7 @@ const Cart = () => {
 											Самовывоз
 										</label>
 
-										<label className='cart__label' for='restaurant'>
+										<label className='cart__label' htmlFor='restaurant'>
 											<input
 												type='radio'
 												id='restaurant'
@@ -334,7 +335,9 @@ const Cart = () => {
 								</div>
 							</div>
 						</div>
-						<div className='submit-button'>Оформить заказ</div>
+						<Link to='/delivery' className='submit-button'>
+							Оформить заказ
+						</Link>
 					</div>
 
 					<aside className='column-side'>
