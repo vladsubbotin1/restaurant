@@ -194,21 +194,26 @@ const Cart = () => {
 
 			<div className='cart__row'>
 				<div className='cart__date-wrapper'>
-					<h5 className='cart__title'>Дата</h5>
-					<input
-						className='cart__date-input'
-						type='date'
-						id='date'
-						name='date'
-					/>
-					<input
-						className='cart__time-input'
-						type='time'
-						id='time'
-						name='time'
-						min='10:00'
-						max='21:00'
-					/>
+					<div>
+						<h5 className='cart__title'>Дата</h5>
+						<input
+							className='cart__date-input'
+							type='date'
+							id='date'
+							name='date'
+						/>
+					</div>
+					<div>
+						<h5 className='cart__title'>Время</h5>
+						<input
+							className='cart__time-input'
+							type='time'
+							id='time'
+							name='time'
+							min='10:00'
+							max='21:00'
+						/>
+					</div>
 				</div>
 
 				<div>

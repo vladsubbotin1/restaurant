@@ -10,6 +10,7 @@ import DeliveryTime from '../assets/icons/delivery-time.svg'
 import RestaurantCard from '../components/RestaurantCard'
 import Footer from '../components/Footer'
 import { useState } from 'react'
+import Arrow from '../assets/icons/arrow-down.svg'
 
 const Main = () => {
 	const [flagStatus, setFlagStatus] = useState('delivery')
@@ -49,12 +50,15 @@ const Main = () => {
 								placeholder='Укажите ваш адрес'
 								onChange={handleChange}
 							/>
-							<input
-								type='submit'
-								value='Найти'
-								className='search-address__submit'
-								style={{ opacity: inputStatus === 0 ? '0.5' : '1' }}
-							/>
+							<div>
+								<img src={Arrow} alt='arrow' />
+								<input
+									type='submit'
+									value='Найти'
+									className='search-address__submit'
+									style={{ opacity: inputStatus === 0 ? '0.5' : '1' }}
+								/>
+							</div>
 						</form>
 					</div>
 					<div className='download'>
@@ -112,8 +116,9 @@ const Main = () => {
 						/>
 					</div>
 					<div className='search-menu__delivery-time'>
-						<img src={DeliveryTime} alt='AppGallery' />
+						<img id='delivery-time' src={DeliveryTime} alt='AppGallery' />
 						<span>Доставка: сейчас</span>
+						<img id='arrow-down' src={Arrow} alt='arrow' />
 					</div>
 				</div>
 

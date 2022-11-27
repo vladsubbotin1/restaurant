@@ -58,9 +58,19 @@
 			justify-content: space-between;
 		}
 
+		div {
+			display: flex;
+			align-items: center;
+			gap: 30px;
+		}
+
+		img {
+			cursor: pointer;
+		}
+
 		#address {
 			margin-left: 20px;
-			min-width: 72%;
+			min-width: 65%;
 		}
 	}
 	&__submit {
@@ -153,11 +163,17 @@
 		@include flex-center-vertical;
 		min-height: 60px;
 		min-width: 31.7%;
-
-		img {
-			margin: 0px 20px;
-		}
+		position: relative;
 	}
+}
+
+#delivery-time {
+	margin: 0px 20px;
+}
+#arrow-down {
+	position: absolute;
+	top: 25px;
+	right: 20px;
 }
 
 #search-menu__input {

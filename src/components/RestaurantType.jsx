@@ -5,6 +5,7 @@ import Img4 from '../assets/images/type-preview/4.jpg'
 import Img5 from '../assets/images/type-preview/5.jpg'
 import Img6 from '../assets/images/type-preview/6.jpg'
 import './styles/RestaurantType.scss'
+import Arrow from '../assets/icons/greater-than.svg'
 
 const restaurantType = () => {
 	let data = [
@@ -61,6 +62,9 @@ const restaurantType = () => {
 					</div>
 				)
 			})}
+			<div className='gallery__arrow'>
+				<img src={Arrow} alt='arrow' />
+			</div>
 		</div>
 	)
 }

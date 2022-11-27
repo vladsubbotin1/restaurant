@@ -1,4 +1,5 @@
 .gallery {
+	position: relative;
 	display: flex;
 	gap: 30px;
 
@@ -13,5 +14,22 @@
 		font-size: 14px;
 		font-weight: 500;
 		margin-top: 15px;
+	}
+
+	&__arrow {
+		width: 30px;
+		height: 30px;
+		border: 2px solid #ffffff;
+		color: #fff;
+		background: #ff4a76;
+		border-radius: 50%;
+		position: absolute;
+		right: 0;
+		top: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		user-select: none;
+		cursor: pointer;
 	}
 }
