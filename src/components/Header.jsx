@@ -4,8 +4,11 @@ import Cart from '../assets/icons/cart.svg'
 import UserPFP from '../assets/images/user-pfp.png'
 import './styles/Header.scss'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const Header = () => {
+	const [isOpen, setIsOpen] = useState(false)
+
 	return (
 		<div className='wrapper'>
 			<div className='header'>
@@ -32,8 +35,27 @@ const Header = () => {
 					<div className='city'>
 						<span>Саратов</span>
 					</div>
-					<div className='pfp'>
+					<div className='pfp' onClick={() => setIsOpen(!isOpen)}>
 						<img src={UserPFP} alt='userpfp' />
+						{isOpen && (
+							<div className='pfp__menu'>
+								<h5>Никита</h5>
+								<div className='pfp__options'>
+									<Link className='pfp__option' to='/'>
+										История заказов
+									</Link>
+									<Link className='pfp__option' to='/'>
+										Личные настройки
+									</Link>
+									<Link className='pfp__option' to='/'>
+										Мои карты
+									</Link>
+								</div>
+								<Link className='pfp__log-out' to='/'>
+									Выйти из аккаунта
+								</Link>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>

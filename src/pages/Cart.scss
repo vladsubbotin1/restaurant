@@ -218,4 +218,9 @@
 	height: 42px;
 	margin-top: 15px;
 	cursor: pointer;
+	transition: 0.3s;
+
+	&:hover {
+		background: linear-gradient(95.32deg, #f78d6a 0%, #ff5982 100%);
+	}
 }
