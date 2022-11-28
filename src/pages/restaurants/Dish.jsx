@@ -8,10 +8,134 @@ import './Dish.scss'
 import Share from '../../assets/icons/share.svg'
 import { useState } from 'react'
 import Menu from '../../components/Menu'
+import Modal from '../../components/Modal'
+import { AnimatePresence } from 'framer-motion'
 
 const Dish = () => {
 	const [likes, setLikes] = useState(563)
 	const [isLiked, setIsLiked] = useState(false)
+
+	const [modalOpen, setModalOpen] = useState(false)
+	const close = () => setModalOpen(false)
+	const open = () => setModalOpen(true)
+
+	const [counter, setCounter] = useState(1)
+	const increase = () => setCounter(count => count + 1)
+	const decrease = () => {
+		if (counter > 1) setCounter(count => count - 1)
+	}
+
+	const modalContent = (
+		<div className='modal__wrapper'>
+			<div className='modal__heading'>Дополнительные опции</div>
+			<span className='grey-text'>Добавка:</span>
+			<div className='toppings__wrapper'>
+				<label className='cart__label' htmlFor='strawberry'>
+					<input
+						type='radio'
+						id='strawberry'
+						name='delivery-type'
+						value='strawberry'
+						defaultChecked
+					/>
+					Клубника <span className='grey-text'> +0 ₽</span>
+				</label>
+
+				<label className='cart__label' htmlFor='apple'>
+					<input type='radio' id='apple' name='delivery-type' value='apple' />
+					Яблоко <span className='grey-text'> +0 ₽</span>
+				</label>
+
+				<label className='cart__label' htmlFor='pear'>
+					<input type='radio' id='pear' name='delivery-type' value='pear' />
+					Груша <span className='grey-text'> +0 ₽</span>
+				</label>
+
+				<label className='cart__label' htmlFor='blackberry'>
+					<input
+						type='radio'
+						id='blackberry'
+						name='delivery-type'
+						value='blackberry'
+					/>
+					Черная смородина <span className='grey-text'> +0 ₽</span>
+				</label>
+
+				<label className='cart__label' htmlFor='raspberry'>
+					<input
+						type='radio'
+						id='raspberry'
+						name='delivery-type'
+						value='raspberry'
+					/>
+					Малина <span className='grey-text'> +0 ₽</span>
+				</label>
+
+				<label className='cart__label' htmlFor='banana'>
+					<input type='radio' id='banana' name='delivery-type' value='banana' />
+					Банан <span className='grey-text'> +0 ₽</span>
+				</label>
+			</div>
+			<span className='grey-text'>Напиток:</span>
+			<div className='beverage__wrapper'>
+				<label className='cart__label' htmlFor='pepsi'>
+					<input
+						type='radio'
+						id='pepsi'
+						name='delivery-type'
+						value='pepsi'
+						defaultChecked
+					/>
+					Pepsi (0.5 л)<span className='grey-text'> +80 ₽</span>
+				</label>
+				<label className='cart__label' htmlFor='sprite'>
+					<input type='radio' id='sprite' name='delivery-type' value='sprite' />
+					Sprite (0.5 л) <span className='grey-text'> +90 ₽</span>
+				</label>
+			</div>
+
+			<div className='toppings__controls-wrapper'>
+				<div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
+					<button
+						className='submit-button'
+						style={{ marginTop: '0px', width: '255px' }}
+					>
+						Добавить в корзину
+					</button>
+					<div
+						className='counter'
+						style={{
+							width: '180px',
+							height: '50px',
+							border: '2px solid #FF4A76',
+							borderRadius: '10px',
+						}}
+					>
+						<button
+							className='control__btn'
+							style={{ fontSize: '25px' }}
+							onClick={decrease}
+						>
+							-
+						</button>
+						<span className='counter__output' style={{ color: '#333' }}>
+							{counter}
+						</span>
+
+						<button
+							className='control__btn'
+							style={{ fontSize: '25px' }}
+							onClick={increase}
+						>
+							+
+						</button>
+					</div>
+				</div>
+
+				<span className=''>224₽</span>
+			</div>
+		</div>
+	)
 
 	const like = () => {
 		if (!isLiked === true) {
@@ -103,7 +227,12 @@ const Dish = () => {
 									<span>Масса </span>
 									<span>300 гр.</span>
 								</div>
-								<div className='dish-card__price'>
+								<div
+									className='dish-card__price'
+									onClick={() => {
+										modalOpen ? close() : open()
+									}}
+								>
 									<span>144₽</span>
 									<div>
 										<img src={Cart} alt='cart' />
@@ -176,6 +305,19 @@ const Dish = () => {
 					</aside>
 				</div>
 			</div>
+			<AnimatePresence
+				initial={false}
+				exitBeforeEnter={true}
+				onExitComplete={() => null}
+			>
+				{modalOpen && (
+					<Modal
+						text={modalContent}
+						modalOpen={modalOpen}
+						handleClose={close}
+					/>
+				)}
+			</AnimatePresence>
 			<FooterBig />
 		</>
 	)

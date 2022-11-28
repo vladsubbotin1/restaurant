@@ -228,7 +228,9 @@ const Header = () => {
 					<button className='settings__change-password'>Изменить пароль</button>
 				</div>
 			</div>
-			<button className='settings-submit submit-button'></button>
+			<button className='settings-submit submit-button'>
+				Сохранить изменения
+			</button>
 		</div>
 	)
 
@@ -248,11 +250,23 @@ const Header = () => {
 
 	const logOut = (
 		<div className='modal__wrapper'>
-			<div className='modal__heading'>Мои карты</div>
-			<div className='modal__card-wrapper'></div>
-			<button className='modal__add-card'>
-				<span>Log out</span>
-			</button>
+			<div className='modal__heading'>
+				Вы уверены, что хотите выйти из аккаунта?
+			</div>
+			<span className='grey-text'>
+				Для полноценной работы с сайтом необходимо быть авторизированным
+			</span>
+			<div className='modal__card-wrapper'>
+				<button
+					className='modal__add-card'
+					style={{ width: '100%', height: '40px' }}
+				>
+					<span>Выйти</span>
+				</button>
+				<button className='submit-button' style={{ marginTop: '0' }}>
+					<span>Отмена</span>
+				</button>
+			</div>
 		</div>
 	)
 
