@@ -1,6 +1,7 @@
 .modal {
-	width: 660px;
-	height: min(60%, 382px);
+	width: 810px;
+	height: fit-content;
+	max-height: 572px;
 	margin: auto;
 	padding: 30px;
 	border-radius: 12px;
@@ -10,6 +11,22 @@
 	background-color: rgb(255, 255, 255);
 	color: black;
 	z-index: 10001;
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+		border-radius: 10px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background-color: #999;
+	}
+
 	p {
 		margin-bottom: 20px;
 		line-height: 1.5;

@@ -362,7 +362,7 @@ const Cart = () => {
 						handleClose={close}
 					/>
 				)}
-			</AnimatePresence>{' '}
+			</AnimatePresence>
 			<FooterBig />
 		</>
 	)

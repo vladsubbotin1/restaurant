@@ -55,3 +55,16 @@ input[type='radio' i] {
 input[type='radio']:checked {
 	border: 4px solid #ff4a76;
 }
+
+.red-text {
+	color: #ff4a76;
+}
+
+.grey-text {
+	color: #999;
+}
+
+.text-m {
+	font-weight: 500;
+	line-height: 17px;
+}

@@ -73,7 +73,7 @@ const Main = () => {
 						<div
 							onClick={nearby}
 							className={
-								flagStatus == 'nearby'
+								flagStatus === 'nearby'
 									? 'flags__item flags__item--active'
 									: 'flags__item '
 							}
@@ -83,7 +83,7 @@ const Main = () => {
 						<div
 							onClick={book}
 							className={
-								flagStatus == 'book'
+								flagStatus === 'book'
 									? 'flags__item flags__item--active'
 									: 'flags__item '
 							}
@@ -93,7 +93,7 @@ const Main = () => {
 						<div
 							onClick={delivery}
 							className={
-								flagStatus == 'delivery'
+								flagStatus === 'delivery'
 									? 'flags__item flags__item--active'
 									: 'flags__item '
 							}
