@@ -28,7 +28,6 @@ const Main = () => {
 
 	const handleChange = e => {
 		setInputStatus(e.target.value)
-		console.log(inputStatus)
 	}
 
 	return (
@@ -50,6 +49,24 @@ const Main = () => {
 								placeholder='Укажите ваш адрес'
 								onChange={handleChange}
 							/>
+							<div
+								className='search-address__results'
+								style={{ display: inputStatus === 0 ? 'none' : 'flex' }}
+								onClick={() => setInputStatus(0)}
+							>
+								<div className='search-address__item'>
+									<span>Большая Казачья улица, 18</span>
+									<span className='grey-text'>Россия, Саратов</span>
+								</div>
+								<div className='search-address__item'>
+									<span>Большая Казачья улица, 18В</span>
+									<span className='grey-text'>Россия, Саратов</span>
+								</div>
+								<div className='search-address__item'>
+									<span>Рабочая улица, 19/21</span>
+									<span className='grey-text'>Россия, Саратов</span>
+								</div>
+							</div>
 							<div>
 								<img src={Arrow} alt='arrow' />
 								<input
